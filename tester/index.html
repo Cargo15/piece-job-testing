@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Piece Job Developer Console</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>Piece Job</h2>
+
+        <p class="subtitle">
+            Developer Console
+        </p>
+
+        <div id="userCard">
+
+    <div id="userStatus">
+
+        Not Logged In
+
+    </div>
+
+    <br>
+
+    <input
+        id="email"
+        type="email"
+        placeholder="Email">
+
+    <br><br>
+
+    <input
+        id="password"
+        type="password"
+        placeholder="Password">
+
+    <br><br>
+
+    <button id="loginButton">
+
+        Login
+
+    </button>
+
+    <button id="logoutButton">
+
+        Logout
+
+    </button>
+
+</div>
+
+        <hr>
+
+        <h3>Edge Functions</h3>
+
+<input
+    id="functionSearch"
+    type="text"
+    placeholder="Search functions...">
+
+<br><br>
+
+<div id="functionList">
+
+    <!-- Functions loaded here -->
+
+</div>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <h1>
+
+                Piece Job Backend Developer Console
+
+            </h1>
+
+        </header>
+
+        <!-- Request Editor -->
+
+        <section class="panel">
+<div class="panelHeader">
+
+    <h2>Request Editor</h2>
+
+    <div>
+
+        <button id="formatJsonButton">
+
+            Format JSON
+
+        </button>
+
+        <button id="resetTemplateButton">
+
+            Reset Template
+
+        </button>
+
+        <button id="copyRequestButton">
+
+            Copy Request
+
+        </button>
+
+    </div>
+
+</div>
+
+            <textarea
+
+                id="requestEditor"
+
+                spellcheck="false">
+
+            </textarea>
+
+        </section>
+
+        <!-- Execute -->
+
+    <section class="panel">
+
+   <div class="panelHeader">
+
+    <h2>Execution Log</h2>
+
+    <div>
+
+        <button id="exportLogButton">
+
+            Export Log
+
+        </button>
+
+        <button id="clearLogButton">
+
+            Clear Log
+
+        </button>
+
+    </div>
+
+</div>
+
+    <div id="logPanel">
+
+        No requests yet.
+
+    </div>
+
+</section>
+
+        <!-- Response -->
+
+       <section class="panel">
+
+    <div class="panelHeader">
+
+    <h2>Response</h2>
+
+    <div>
+
+    <button id="downloadResponseButton">
+
+        Download JSON
+
+    </button>
+
+    <button id="copyResponseButton">
+
+        Copy Response
+
+    </button>
+
+    <button id="clearResponseButton">
+
+        Clear Response
+
+    </button>
+
+</div>
+
+</div>
+
+    <pre id="responseViewer">
+
+Waiting...
+
+    </pre>
+
+</section>
+
+<section class="panel">
+
+    <div class="panelHeader">
+
+        <h2>
+
+            Execution Statistics
+
+        </h2>
+
+    </div>
+
+    <div id="statisticsPanel">
+
+        No executions yet.
+
+    </div>
+
+</section>
+
+        <!-- Logs -->
+
+        <section class="panel">
+
+            <h2>
+
+                Execution Log
+
+            </h2>
+
+            <div id="logPanel">
+
+                No requests yet.
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- Developer Utilities -->
+
+<section class="panel">
+
+    <div class="panelHeader">
+
+        <h2>
+
+            Developer Utilities
+
+        </h2>
+
+    </div>
+
+    <div id="developerUtilities">
+
+        <button id="clearConsoleDataButton">
+
+            Clear Console Data
+
+        </button>
+
+        <button id="resetStatisticsButton">
+
+            Reset Statistics
+
+        </button>
+
+        <button id="copyStatisticsButton">
+
+            Copy Statistics
+
+        </button>
+
+        <button id="apiPingButton">
+
+            API Ping
+
+        </button>
+
+        <button id="backendHealthButton">
+
+            Backend Health
+
+        </button>
+
+        <div id="apiPingResult">
+
+    No ping performed.
+
+</div>
+
+<div id="backendHealthResult">
+
+    No health check performed.
+
+</div>
+
+        <hr>
+
+        <strong>
+
+            Developer Console v1.0
+
+        </strong>
+
+        <br>
+
+        Backend Phase 2
+
+    </div>
+
+</section>
+
+<script src="config.js"></script>
+<script src="auth.js"></script>
+<script src="api.js"></script>
+<script src="templates.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

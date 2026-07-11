@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Piece Job Edge Function Tester</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 180px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+pre {
+    margin-top: 20px;
+    background: #f4f4f4;
+    padding: 15px;
+    white-space: pre-wrap;
+    border: 1px solid #ddd;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Piece Job Edge Function Tester</h2>
+
+<label>Function URL</label>
+<input
+id="url"
+value="https://huvzqqlpbwamouiztfdj.supabase.co/functions/v1/smart-worker">
+
+<label>Customer Access Token</label>
+<textarea id="token"></textarea>
+
+<label>Request Body</label>
+<textarea id="body">{
+  "product_id": "",
+  "project_name": "Test Project"
+}</textarea>
+
+<button onclick="runTest()">Run Test</button>
+
+<h3>Response</h3>
+
+<pre id="response">Waiting...</pre>
+
+<script>
+async function runTest() {
+
+    const url = document.getElementById("url").value;
+    const token = document.getElementById("token").value;
+    const body = document.getElementById("body").value;
+
+    try {
+
+        const res = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
+            },
+            body: body
+        });
+
+        const json = await res.json();
+
+        document.getElementById("response").textContent =
+            JSON.stringify(json, null, 2);
+
+    } catch (err) {
+
+        document.getElementById("response").textContent =
+            err.message;
+
+    }
+
+}
+</script>
+
+</body>
+</html>

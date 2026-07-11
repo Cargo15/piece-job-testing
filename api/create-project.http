@@ -1,0 +1,8 @@
+POST https://huvzqqlpbwamouiztfdj.supabase.co/functions/v1/smart-worker
+Content-Type: application/json
+Authorization: Bearer {{ACCESS_TOKEN}}
+
+{
+  "product_id": "REPLACE_WITH_PRODUCT_ID",
+  "project_name": "Test Project"
+}
