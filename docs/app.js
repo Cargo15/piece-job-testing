@@ -208,14 +208,7 @@ const result =
 
     );
 
-                const result =
-                    await executeFunction(
-
-                        selectedFunction.id,
-
-                        payload
-
-                    );
+              
 
                 responseViewer.textContent =
                     JSON.stringify(
