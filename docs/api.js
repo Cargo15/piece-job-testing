@@ -9,7 +9,7 @@ async function executeFunction(functionName, payload) {
 
         data: { session }
 
-    } = await supabase.auth.getSession();
+    } = await supabaseClient.auth.getSession();
 
     if (!session) {
 

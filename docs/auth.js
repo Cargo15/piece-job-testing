@@ -4,7 +4,7 @@
 
 async function login(email, password) {
 
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
 
         email: email,
         password: password
@@ -26,7 +26,7 @@ async function login(email, password) {
 
 async function logout() {
 
-    await supabase.auth.signOut();
+    await supabaseClient.auth.signOut();
 
     updateUserStatus();
 
@@ -38,7 +38,7 @@ async function updateUserStatus() {
 
         data: { user }
 
-    } = await supabase.auth.getUser();
+    } = await supabaseClient.auth.getUser();
 
     const status = document.getElementById("userStatus");
 
