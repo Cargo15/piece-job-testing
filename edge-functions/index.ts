@@ -24,9 +24,10 @@ serve(async (req) => {
         }),
         {
           status: 405,
-          headers: {
-            "Content-Type": "application/json",
-          },
+         headers: {
+  ...corsHeaders,
+  "Content-Type": "application/json",
+},
         }
       );
     }
@@ -58,9 +59,10 @@ serve(async (req) => {
         }),
         {
           status: 401,
-          headers: {
-            "Content-Type": "application/json",
-          },
+         headers: {
+  ...corsHeaders,
+  "Content-Type": "application/json",
+},
         }
       );
     }
@@ -82,9 +84,10 @@ serve(async (req) => {
         }),
         {
           status: 400,
-          headers: {
-            "Content-Type": "application/json",
-          },
+        headers: {
+  ...corsHeaders,
+  "Content-Type": "application/json",
+},
         }
       );
     }
@@ -105,8 +108,9 @@ serve(async (req) => {
         {
           status: 404,
           headers: {
-            "Content-Type": "application/json",
-          },
+  ...corsHeaders,
+  "Content-Type": "application/json",
+},
         }
       );
     }
@@ -120,9 +124,10 @@ serve(async (req) => {
         }),
         {
           status: 403,
-          headers: {
-            "Content-Type": "application/json",
-          },
+         headers: {
+  ...corsHeaders,
+  "Content-Type": "application/json",
+},
         }
       );
     }
@@ -142,9 +147,10 @@ serve(async (req) => {
         }),
         {
           status: 404,
-          headers: {
-            "Content-Type": "application/json",
-          },
+         headers: {
+  ...corsHeaders,
+  "Content-Type": "application/json",
+},
         }
       );
     }
@@ -159,8 +165,9 @@ serve(async (req) => {
         {
           status: 409,
           headers: {
-            "Content-Type": "application/json",
-          },
+  ...corsHeaders,
+  "Content-Type": "application/json",
+},
         }
       );
     }
@@ -175,8 +182,9 @@ serve(async (req) => {
         {
           status: 409,
           headers: {
-            "Content-Type": "application/json",
-          },
+  ...corsHeaders,
+  "Content-Type": "application/json",
+},
         }
       );
     }
@@ -197,8 +205,9 @@ serve(async (req) => {
         {
           status: 404,
           headers: {
-            "Content-Type": "application/json",
-          },
+  ...corsHeaders,
+  "Content-Type": "application/json",
+},
         }
       );
     }
@@ -212,9 +221,10 @@ serve(async (req) => {
         }),
         {
           status: 409,
-          headers: {
-            "Content-Type": "application/json",
-          },
+         headers: {
+  ...corsHeaders,
+  "Content-Type": "application/json",
+},
         }
       );
     }
@@ -228,9 +238,10 @@ serve(async (req) => {
         }),
         {
           status: 409,
-          headers: {
-            "Content-Type": "application/json",
-          },
+         headers: {
+  ...corsHeaders,
+  "Content-Type": "application/json",
+},
         }
       );
     }
@@ -256,8 +267,9 @@ serve(async (req) => {
         {
           status: 500,
           headers: {
-            "Content-Type": "application/json",
-          },
+  ...corsHeaders,
+  "Content-Type": "application/json",
+},
         }
       );
     }
@@ -275,8 +287,9 @@ serve(async (req) => {
       {
         status: 201,
         headers: {
-          "Content-Type": "application/json",
-        },
+  ...corsHeaders,
+  "Content-Type": "application/json",
+},
       }
     );  
     } catch (error) {
@@ -290,9 +303,10 @@ serve(async (req) => {
       }),
       {
         status: 500,
-        headers: {
-          "Content-Type": "application/json",
-        },
+       headers: {
+  ...corsHeaders,
+  "Content-Type": "application/json",
+},
       }
     );
   }
